@@ -1,0 +1,14 @@
+<sly data-sly-use.model="com.merkle.aipilot.core.models.HeadlineModel"/>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-test="${model.text}">
+    <div class="cmp-headline" data-cmp-is="headline" id="${model.id}" data-cmp-data-layer="${model.data.json}">
+        <h1 class="cmp-headline__title" data-sly-element="${model.type}">
+            <a data-sly-unwrap="${!model.link.valid || model.linkDisabled}"
+               class="cmp-headline__link"
+               data-sly-attribute="${model.link.htmlAttributes}"
+               data-cmp-clickable="${model.data ? true : false}">${model.text}</a>
+        </h1>
+        <p class="cmp-headline__subtitle" data-sly-test="${model.subtitle}">${model.subtitle}</p>
+    </div>
+</sly>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.text, classAppend='cmp-headline'}"></sly>

@@ -1,0 +1,4 @@
+- project: aem-aipilot
+- package: com.merkle.aipilot.core
+- group: AIPilot Components
+- configured: true

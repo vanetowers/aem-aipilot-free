@@ -1,0 +1,32 @@
+<sly data-sly-use.model="com.merkle.aipilot.core.models.HeroModel"/>
+
+<sly data-sly-test="${model.hasContent}">
+    <div class="cmp-hero cmp-hero--align-${model.horizontalAlignment} cmp-hero--valign-${model.verticalAlignment} ${model.colorStyleClass} cmp-hero--opacity-${model.opacity}" data-cmp-is="hero">
+        <div class="cmp-hero__background" data-sly-test="${model.backgroundType == 'image' && model.backgroundRef}">
+            <img src="${model.backgroundRef}" alt="${model.headline @ context='attribute'}" loading="lazy"/>
+        </div>
+        <div class="cmp-hero__background" data-sly-test="${model.backgroundType == 'video' && model.backgroundRef}">
+            <video autoplay muted loop playsinline preload="auto">
+                <source src="${model.videoUrl}" type="${model.videoMimeType}"/>
+            </video>
+        </div>
+        <div class="cmp-hero__overlay"></div>
+        <div class="cmp-hero__content">
+            <h2 class="cmp-hero__title" data-sly-test="${model.headline}">${model.headline}</h2>
+            <p class="cmp-hero__description" data-sly-test="${model.description}">${model.description}</p>
+            <a class="cmp-hero__cta" href="${model.ctaLink}"
+               data-sly-test="${model.hasCta}"
+               target="${model.ctaTarget}"
+               data-sly-attribute="${model.ctaTarget == '_blank' ? 'rel=noopener noreferrer' : ''}">
+                <img class="cmp-hero__cta-icon" src="${model.ctaIcon}" alt="" data-sly-test="${model.ctaIcon}"/>
+                <span data-sly-test="${model.ctaText}">${model.ctaText}</span>
+            </a>
+        </div>
+    </div>
+</sly>
+
+<sly data-sly-test="${!model.hasContent && wcmmode.edit}">
+    <div class="cmp-hero cmp-hero--empty">
+        <p>${'Please configure the Hero component' @ i18n}</p>
+    </div>
+</sly>

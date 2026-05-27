@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Headline Page"
+        cq:template="/conf/aem-aipilot/settings/wcm/templates/page-content"
+        sling:resourceType="aem-aipilot/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aem-aipilot/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aem-aipilot/components/container">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aem-aipilot/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aem-aipilot/components/container"
+                    layout="responsiveGrid">
+                    <headline
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="My Headline component"
+                        sling:resourceType="aem-aipilot/components/headline"
+                        subtitle="This is a subtitle text"
+                        type="h2"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>
