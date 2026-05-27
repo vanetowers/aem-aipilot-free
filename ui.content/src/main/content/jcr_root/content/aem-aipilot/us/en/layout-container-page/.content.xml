@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Layout Container Page"
+        cq:template="/conf/aem-aipilot/settings/wcm/templates/page-content"
+        sling:resourceType="aem-aipilot/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aem-aipilot/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aem-aipilot/components/container">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aem-aipilot/components/title"
+                    jcr:title="Layout Container Page"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aem-aipilot/components/container"
+                    layout="responsiveGrid">
+                    <layoutcontainer
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aem-aipilot/components/layout-container"
+                        columnLayout="8-4">
+                        <col1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="aem-aipilot/components/container"
+                            layout="responsiveGrid">
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="aem-aipilot/components/image"
+                                fileReference="/content/dam/aem-aipilot/asset.jpg"/>
+                        </col1>
+                        <col2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="aem-aipilot/components/container"
+                            layout="responsiveGrid">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="aem-aipilot/components/title"
+                                jcr:title="Layout Container Sample"/>
+                        </col2>
+                    </layoutcontainer>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

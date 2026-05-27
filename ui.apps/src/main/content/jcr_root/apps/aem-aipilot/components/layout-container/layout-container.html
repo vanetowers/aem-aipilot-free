@@ -1,0 +1,16 @@
+<sly data-sly-use.model="com.merkle.aipilot.core.models.LayoutContainerModel"/>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='aem-aipilot.components.layout-container'}"/>
+</sly>
+
+<sly data-sly-test="${model.hasContent}">
+    <div class="cmp-layout-container" data-cmp-is="layout-container">
+        <div class="cmp-layout-container__row">
+            <sly data-sly-list.column="${model.columns}">
+                <div class="${column.cssClass}">
+                    <sly data-sly-resource="${column.childName}"></sly>
+                </div>
+            </sly>
+        </div>
+    </div>
+</sly>
