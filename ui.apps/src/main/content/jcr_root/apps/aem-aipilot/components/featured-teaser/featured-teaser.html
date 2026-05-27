@@ -1,0 +1,30 @@
+<sly data-sly-use.model="com.merkle.aipilot.core.models.FeaturedTeaserModel"/>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='aem-aipilot.components.featured-teaser'}"/>
+</sly>
+
+<sly data-sly-test="${model.hasContent}">
+    <div class="cmp-featured-teaser cmp-featured-teaser--${model.variant} ${model.imagePosition == 'right' ? 'cmp-featured-teaser--image-right' : ''} ${model.imageRef ? '' : 'cmp-featured-teaser--no-image'} ${model.colorStyleClass}" data-cmp-is="featured-teaser">
+        <div class="cmp-featured-teaser__background" data-sly-test="${model.variant == 'fullscreen' && model.imageRef}">
+            <img src="${model.imageRef}" alt="${model.headline}" loading="lazy"/>
+        </div>
+        <div class="cmp-featured-teaser__image" data-sly-test="${model.variant == 'sidebyside' && model.imageRef}">
+            <img src="${model.imageRef}" alt="${model.headline}" loading="lazy"/>
+        </div>
+        <div class="cmp-featured-teaser__content">
+            <p class="cmp-featured-teaser__pre-title" data-sly-test="${model.preTitle}">${model.preTitle}</p>
+            <h2 class="cmp-featured-teaser__headline">${model.headline}</h2>
+            <p class="cmp-featured-teaser__description" data-sly-test="${model.description}">${model.description}</p>
+            <a class="cmp-featured-teaser__cta" href="${model.ctaLink}" data-sly-test="${model.hasCta}" target="${model.ctaTarget}" data-sly-attribute="${model.ctaTarget == '_blank' ? 'rel=noopener noreferrer' : ''}">
+                <img class="cmp-featured-teaser__cta-icon" src="${model.ctaIcon}" alt="" data-sly-test="${model.ctaIcon}"/>
+                <span>${model.ctaText}</span>
+            </a>
+        </div>
+    </div>
+</sly>
+
+<sly data-sly-test="${!model.hasContent && wcmmode.edit}">
+    <div class="cmp-featured-teaser cmp-featured-teaser--empty">
+        <p>${'Please configure the Featured Teaser component' @ i18n}</p>
+    </div>
+</sly>

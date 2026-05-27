@@ -343,6 +343,34 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_1575031387650>
             </teaser>
+            <featured-teaser jcr:primaryType="nt:unstructured">
+                <policy_featured_teaser
+                    jcr:description="Configures color styles for text and CTA button contrast."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Featured Teaser"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Text and CTA Color"
+                            cq:styleGroupMultiple="true"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="cmp-featured-teaser--color-black"
+                                    cq:styleId="featured-teaser-color-black"
+                                    cq:styleLabel="Black"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="cmp-featured-teaser--color-white"
+                                    cq:styleId="featured-teaser-color-white"
+                                    cq:styleLabel="White"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_featured_teaser>
+            </featured-teaser>
             <download jcr:primaryType="nt:unstructured">
                 <policy_1575032193319
                     jcr:description="Sets the title size to H3."
