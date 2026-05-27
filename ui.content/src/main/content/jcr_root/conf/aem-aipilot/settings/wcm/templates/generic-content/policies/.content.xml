@@ -49,6 +49,10 @@
                                 cq:policy="aem-aipilot/components/hero/policy_651483963895666"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="wcm/core/components/policies/mapping"/>
+                            <featured-teaser
+                                cq:policy="aem-aipilot/components/featured-teaser/policy_featured_teaser"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
                             <download
                                 cq:policy="aem-aipilot/components/download/policy_1575032193319"
                                 jcr:primaryType="nt:unstructured"
